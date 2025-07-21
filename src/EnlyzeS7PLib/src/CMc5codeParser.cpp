@@ -524,6 +524,9 @@ CMc5codeParser::_AddStructVariable(const std::string& strVariableName)
         return *pError;
     }
 
+    // After a STRUCT, align to the next 2-byte boundary for subsequent variables
+    _AlignUp(2 * 8);
+
     return std::monostate();
 }
 
